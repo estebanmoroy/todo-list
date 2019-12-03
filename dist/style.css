@@ -1,0 +1,100 @@
+:root {
+  --main-color: #252e42;
+  --secondary-color: #505668;
+  --tertiary-color: #5981ea;
+  --font-color: #fefefe;
+  --background-color: #010920;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  font-family: "Asap", sans-serif;
+  color: var(--font-color);
+  font-size: 1.1rem;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-rows:
+    [title-start] 20% [title-end projects-start]
+    auto [projects-end footer-start]
+    20% [footer-end];
+  justify-content: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-top: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.projects-container {
+  grid-row: projects-start / projects-end;
+  width: 500px;
+}
+
+.project {
+  padding: 1rem;
+  background-color: var(--main-color);
+  border-radius: 12px;
+}
+
+.todo-container {
+}
+
+.todo {
+  display: grid;
+  grid-template-columns:
+    [checkbox-start] 10% [checkbox-end title-start]
+    auto [title-end marker-start]
+    10% [marker-end];
+  grid-template-rows:
+    [title-start] 10% [title-end description-start]
+    auto [description-end date-start]
+    10% [date-end];
+  grid-column-gap: 5px;
+  grid-row-gap: 15px;
+}
+
+.todo-checkbox {
+  grid-column: checkbox-start / checkbox-end;
+  grid-row: title-start / title-end;
+  background-color: var(--secondary-color);
+}
+
+.todo-title {
+  grid-column: title-start / title-end;
+  grid-row: title-start / title-end;
+  align-self: center;
+  font-weight: 700;
+}
+
+.todo-mark-as-important {
+  grid-column: marker-start / marker-end;
+  grid-row: title-start / title-end;
+}
+
+.todo-description {
+  grid-column: title-start / marker-end;
+  grid-row: description-start / description-end;
+}
+
+.todo-date {
+  grid-column: title-start / marker-end;
+  grid-row: date-start / date-end;
+}
+
+footer {
+  grid-row: footer-start / footer-end;
+  align-self: end;
+}
