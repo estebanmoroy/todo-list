@@ -103,63 +103,40 @@ footer {
 }
 
 /* Checkbox stuff*/
+/* Hides the default checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
 .todo-checkbox {
   grid-column: checkbox-start / checkbox-end;
   grid-row: title-start / title-end;
+}
 
-  margin-left: 10px;
-  margin-top: -1px;
-  display: block;
-  position: relative;
+.checkmark-wrapper {
   cursor: pointer;
-  font-size: 22px;
-  user-select: none;
 }
-/* Hides the default checkbox */
-.todo-checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
+
+.checkmark-bg {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-top: -0.2rem;
+  margin-left: 0.4rem;
+  background-color: var(--second-color);
   border-radius: 25px;
-  background-color: var(--second-color);
 }
-/* On mouse-over, add a grey background color */
-.todo-checkbox:hover input ~ .checkmark {
-  background-color: var(--fourth-color);
-}
-/* When the checkbox is checked, add a blue background */
-.todo-checkbox input:checked ~ .checkmark {
-  background-color: var(--second-color);
-}
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+
+/* Change of icon*/
+input + .checkmark-bg > i.checkmark::before {
   content: "";
-  position: absolute;
-  display: none;
+  font-size: 1.6rem;
+  font-weight: 900;
+  transition: 0.5s;
+
+  padding-left: 0.2rem;
 }
-/* Show the checkmark when checked */
-.todo-checkbox input:checked ~ .checkmark:after {
-  display: block;
-}
-/* Style the checkmark/indicator */
-.todo-checkbox .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-radius: 2px;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
+input:checked + .checkmark-bg > i.checkmark::before {
+  content: "check";
 }
 
 /*Mark as important flag/checkbox*/
@@ -182,11 +159,6 @@ footer {
 }
 .mark-wrapper:hover i {
   color: var(--third-color);
-}
-
-/* Hides the default checkbox */
-.mark-wrapper input {
-  display: none;
 }
 
 /* Change of icon*/
