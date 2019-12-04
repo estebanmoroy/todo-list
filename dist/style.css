@@ -67,6 +67,34 @@ h2 {
   grid-row-gap: 15px;
 }
 
+.todo-title {
+  grid-column: title-start / title-end;
+  grid-row: title-start / title-end;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.todo-mark-as-important {
+  grid-column: marker-start / marker-end;
+  grid-row: title-start / title-end;
+}
+
+.todo-description {
+  grid-column: title-start / marker-end;
+  grid-row: description-start / description-end;
+}
+
+.todo-date {
+  grid-column: title-start / marker-end;
+  grid-row: date-start / date-end;
+}
+
+footer {
+  grid-row: footer-start / footer-end;
+  align-self: end;
+}
+
+/* Checkbox stuff*/
 .todo-checkbox {
   grid-column: checkbox-start / checkbox-end;
   grid-row: title-start / title-end;
@@ -131,31 +159,4 @@ h2 {
   border-radius: 2px;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
-}
-
-.todo-title {
-  grid-column: title-start / title-end;
-  grid-row: title-start / title-end;
-  font-size: 1.2rem;
-  font-weight: 900;
-}
-
-.todo-mark-as-important {
-  grid-column: marker-start / marker-end;
-  grid-row: title-start / title-end;
-}
-
-.todo-description {
-  grid-column: title-start / marker-end;
-  grid-row: description-start / description-end;
-}
-
-.todo-date {
-  grid-column: title-start / marker-end;
-  grid-row: date-start / date-end;
-}
-
-footer {
-  grid-row: footer-start / footer-end;
-  align-self: end;
 }
