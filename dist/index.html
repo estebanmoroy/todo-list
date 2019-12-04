@@ -9,10 +9,8 @@
       rel="stylesheet"
     />
     <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
     />
   </head>
   <body>
@@ -28,10 +26,12 @@
                 <span class="checkmark"></span>
               </label>
               <div class="todo-title">This is a Title</div>
-              <label for="todo-1-mark" class="todo-mark-as-important">
-                <input type="checkbox" id="todo-1-mark" />
-                <span class="mark"></span>
-              </label>
+              <div class="todo-mark-as-important">
+                <label for="todo-1-mark" class="mark-wrapper">
+                  <input type="checkbox" id="todo-1-mark" />
+                  <i class="mark material-icons"></i>
+                </label>
+              </div>
               <div class="todo-description">This is a Description</div>
               <div class="todo-date">
                 <span class="date-wrapper">12/12/2019</span>

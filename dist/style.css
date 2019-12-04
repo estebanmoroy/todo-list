@@ -166,31 +166,38 @@ footer {
 .todo-mark-as-important {
   grid-column: marker-start / marker-end;
   grid-row: title-start / title-end;
-
-  font-family: "FontAwesome";
-  font-size: 1.3rem;
-  font-weight: 700;
-  cursor: pointer;
+  display: none;
 }
+.todo:hover .todo-mark-as-important {
+  display: block;
+}
+
+.mark-wrapper {
+  cursor: pointer;
+  padding: 1rem 0.4rem 0.2rem 0.4rem;
+  border-radius: 25px;
+}
+
+.mark-wrapper:hover {
+  background-color: var(--second-color);
+}
+.mark-wrapper:hover i {
+  color: var(--third-color);
+}
+
 /* Hides the default checkbox */
-.todo-mark-as-important input {
+.mark-wrapper input {
   display: none;
 }
 
-input + span.mark::before {
-  content: "\f097";
+input + i.mark::before {
+  content: "bookmark_border";
+  font-size: 1.6rem;
   transition: 0.5s;
 }
-input + span.mark:hover {
-  content: "\f097";
-  color: var(--third-color);
-  font-size: 1.4rem;
-  transition: 0.1s;
-}
 
-input:checked + span.mark::before {
-  content: "\f02e";
-  font-size: 1.4rem;
+input:checked + i.mark::before {
+  content: "bookmark";
   color: var(--third-color);
   transition: 0.5s;
 }
