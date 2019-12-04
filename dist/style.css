@@ -78,11 +78,6 @@ h2 {
   font-weight: 900;
 }
 
-.todo-mark-as-important {
-  grid-column: marker-start / marker-end;
-  grid-row: title-start / title-end;
-}
-
 .todo-description {
   grid-column: title-start / marker-end;
   grid-row: description-start / description-end;
@@ -120,7 +115,6 @@ footer {
   font-size: 22px;
   user-select: none;
 }
-
 /* Hides the default checkbox */
 .todo-checkbox input {
   position: absolute;
@@ -129,7 +123,6 @@ footer {
   height: 0;
   width: 0;
 }
-
 .checkmark {
   position: absolute;
   top: 0;
@@ -139,29 +132,24 @@ footer {
   border-radius: 25px;
   background-color: var(--second-color);
 }
-
 /* On mouse-over, add a grey background color */
 .todo-checkbox:hover input ~ .checkmark {
   background-color: var(--fourth-color);
 }
-
 /* When the checkbox is checked, add a blue background */
 .todo-checkbox input:checked ~ .checkmark {
   background-color: var(--second-color);
 }
-
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
 /* Show the checkmark when checked */
 .todo-checkbox input:checked ~ .checkmark:after {
   display: block;
 }
-
 /* Style the checkmark/indicator */
 .todo-checkbox .checkmark:after {
   left: 9px;
@@ -172,4 +160,37 @@ footer {
   border-radius: 2px;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+/*Mark as important flag/checkbox*/
+.todo-mark-as-important {
+  grid-column: marker-start / marker-end;
+  grid-row: title-start / title-end;
+
+  font-family: "FontAwesome";
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+/* Hides the default checkbox */
+.todo-mark-as-important input {
+  display: none;
+}
+
+input + span.mark::before {
+  content: "\f097";
+  transition: 0.5s;
+}
+input + span.mark:hover {
+  content: "\f097";
+  color: var(--third-color);
+  font-size: 1.4rem;
+  transition: 0.1s;
+}
+
+input:checked + span.mark::before {
+  content: "\f02e";
+  font-size: 1.4rem;
+  color: var(--third-color);
+  transition: 0.5s;
 }
