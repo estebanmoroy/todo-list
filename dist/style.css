@@ -2,6 +2,7 @@
   --main-color: #252e42;
   --secondary-color: #505668;
   --tertiary-color: #5981ea;
+  --quaternary-color: #596074;
   --font-color: #fefefe;
   --background-color: #010920;
 }
@@ -69,13 +70,71 @@ h2 {
 .todo-checkbox {
   grid-column: checkbox-start / checkbox-end;
   grid-row: title-start / title-end;
+
+  margin-left: 10px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* Hides the default checkbox */
+.todo-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
   background-color: var(--secondary-color);
+}
+
+/* On mouse-over, add a grey background color */
+.todo-checkbox:hover input ~ .checkmark {
+  background-color: var(--quaternary-color);
+}
+
+/* When the checkbox is checked, add a blue background */
+.todo-checkbox input:checked ~ .checkmark {
+  background-color: var(--secondary-color);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.todo-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.todo-checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-radius: 2px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
 .todo-title {
   grid-column: title-start / title-end;
   grid-row: title-start / title-end;
-  align-self: center;
   font-weight: 700;
 }
 
