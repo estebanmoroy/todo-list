@@ -3,6 +3,7 @@
   --second-color: #505668;
   --third-color: #5981ea;
   --fourth-color: #666d81;
+  --fifth-color: #88304e;
   --font-color: #fefefe;
   --background-color: #010920;
 }
@@ -87,11 +88,18 @@ h2 {
   grid-row: description-start / description-end;
 
   color: var(--fourth-color);
+  margin-bottom: 6px;
 }
 
 .todo-date {
   grid-column: title-start / marker-end;
   grid-row: date-start / date-end;
+}
+
+.date-wrapper {
+  background-color: var(--fifth-color);
+  border-radius: 5px;
+  padding: 2px 8px;
 }
 
 footer {
