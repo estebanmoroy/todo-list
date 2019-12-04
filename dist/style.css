@@ -177,7 +177,6 @@ footer {
   padding: 1rem 0.4rem 0.2rem 0.4rem;
   border-radius: 25px;
 }
-
 .mark-wrapper:hover {
   background-color: var(--second-color);
 }
@@ -190,14 +189,13 @@ footer {
   display: none;
 }
 
+/* Change of icon*/
 input + i.mark::before {
   content: "bookmark_border";
   font-size: 1.6rem;
   transition: 0.5s;
 }
-
 input:checked + i.mark::before {
   content: "bookmark";
   color: var(--third-color);
-  transition: 0.5s;
 }
