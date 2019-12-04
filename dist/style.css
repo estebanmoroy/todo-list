@@ -1,8 +1,8 @@
 :root {
-  --main-color: #252e42;
-  --secondary-color: #505668;
-  --tertiary-color: #5981ea;
-  --quaternary-color: #596074;
+  --first-color: #252e42;
+  --second-color: #505668;
+  --third-color: #5981ea;
+  --fourth-color: #666d81;
   --font-color: #fefefe;
   --background-color: #010920;
 }
@@ -47,7 +47,7 @@ h2 {
 
 .project {
   padding: 1rem;
-  background-color: var(--main-color);
+  background-color: var(--first-color);
   border-radius: 12px;
 }
 
@@ -85,6 +85,8 @@ h2 {
 .todo-description {
   grid-column: title-start / marker-end;
   grid-row: description-start / description-end;
+
+  color: var(--fourth-color);
 }
 
 .todo-date {
@@ -127,17 +129,17 @@ footer {
   height: 25px;
   width: 25px;
   border-radius: 25px;
-  background-color: var(--secondary-color);
+  background-color: var(--second-color);
 }
 
 /* On mouse-over, add a grey background color */
 .todo-checkbox:hover input ~ .checkmark {
-  background-color: var(--quaternary-color);
+  background-color: var(--fourth-color);
 }
 
 /* When the checkbox is checked, add a blue background */
 .todo-checkbox input:checked ~ .checkmark {
-  background-color: var(--secondary-color);
+  background-color: var(--second-color);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
